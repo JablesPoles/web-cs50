@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Image Search</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="fullscreenDiv">
+        <div class="corner">
+          <a href="index.html">Search</a>
+        </div>
+        <div class="corner">
+          <a href="advanced.html">Advanced Search</a>
+        </div>
+        <div class="center">
+          <img src="google-white-logo.png" alt="Google logo" height="95px">
+          <br><br>
+          <form method="get" action="http://images.google.com/images">
+            <input class="bar" type="text" name="q">
+            <input type="hidden" name="tbm" value="isch">
+            <br>
+            <input class="button" id="image-button" type="submit" value="Image Search">
+          </form>
+        </div>
+      </div>
+    </body>
+</html>
