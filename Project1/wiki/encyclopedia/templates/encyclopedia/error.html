@@ -6,4 +6,15 @@
 
 {% block body %}
     <h1>The entry {{ title }} was not found.</h1>
+
+    <p>Visit the <a href="{% url 'index' %}">Home</a> page to see available articles</p>
+
+    {% if related_search %}
+    <p>Related entries:</p>
+        <ul>
+            {% for title in related_search %}
+            <li><a href="{% url 'entry' title=title %}">{{title}}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}

@@ -39,7 +39,7 @@ def get_entry(title):
 def related_search(title):
 
     related = []
-
+    
     for entry_name in list_entries():
         if title.lower() in entry_name.lower() or entry_name.lower() in title.lower():
             related.append(entry_name)

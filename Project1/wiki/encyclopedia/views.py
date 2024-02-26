@@ -8,13 +8,14 @@ from markdown2 import Markdown
 class SearchBar(forms.Form):
     title = forms.CharField(label="", widget=forms.TextInput(attrs={
         "class": "search",
-        "placeholder": "Wiki"
+        "placeholder": "Search Encyclopedia"
     }))
 
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
+        "entries": util.list_entries(),
+        "search_form": SearchBar()
     })
 
 def entry(request, title):
@@ -54,7 +55,6 @@ def search(request):
             else:
 
                 related_search = util.related_search(title)
-
                 return render(request, "encyclopedia/search.html", {
                     "title": title,
                     "related_search": related_search,
