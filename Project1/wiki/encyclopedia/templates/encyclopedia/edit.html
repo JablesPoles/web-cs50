@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit Page {{title}}
+{% endblock %}
+
+{% block body %}
+
+    <h1>Edit an entry of the {{title}} page</h1>
+
+    <p>Use the form below to edit the entry from the {{title}} page</p>
+
+    <p>This Wiki uses <a href="https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">
+        Github Markdown</a>
+     to style it's page, check the link for more info.</p>
+
+    <form action="{% url 'edit' title=title %}" method="post">
+        {% csrf_token %}
+        {{ edit_form }}
+        <br>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+
+
+{% endblock %}
+
